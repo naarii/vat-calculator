@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import DisplayBlock from './Components/DisplayBlock';
+import PriceEntryField from './Components/PriceEntryField';
+import VATRateField from './Components/VATRateField';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="header">
+      <h1>VAT Calculator</h1>
+      <form className="pale-green-border">
+        <VATRateField label="VAT Rate: " customstyle="field" />
+        <PriceEntryField label="Price excl VAT: " price={20} customstyle="field" />
+        <DisplayBlock label="VAT to pay: " value={4} customstyle="field" />
+        <PriceEntryField label="Price incl VAT: " price={24} customstyle="field" />
+      </form>
     </div>
   );
 }
